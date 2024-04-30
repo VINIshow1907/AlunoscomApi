@@ -270,3 +270,4 @@ C:\Users\vinic\Desktop\AlunocomApi\AlunoApi\AlunoApi\obj\Debug\net8.0\refint\Alu
 C:\Users\vinic\Desktop\AlunocomApi\AlunoApi\AlunoApi\obj\Debug\net8.0\AlunoApi.pdb
 C:\Users\vinic\Desktop\AlunocomApi\AlunoApi\AlunoApi\obj\Debug\net8.0\AlunoApi.genruntimeconfig.cache
 C:\Users\vinic\Desktop\AlunocomApi\AlunoApi\AlunoApi\obj\Debug\net8.0\ref\AlunoApi.dll
+C:\Users\vinic\Desktop\AlunocomApi\AlunoApi\AlunoApi\obj\Debug\net8.0\AlunoApi.sourcelink.json
