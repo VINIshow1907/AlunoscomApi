@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -55,19 +55,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "AlunoApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "AlunoApi\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-30T18:03:53.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AlunosController.cs",
               "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Controllers\\AlunosController.cs",
@@ -81,6 +68,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Startup.cs",
+              "RelativeDocumentMoniker": "AlunoApi\\Startup.cs",
+              "ToolTip": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Startup.cs",
+              "RelativeToolTip": "AlunoApi\\Startup.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwC4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T17:16:01.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "AlunoApi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "AlunoApi\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-30T18:03:53.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AlunosService.cs",
               "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Services\\AlunosService.cs",
@@ -90,19 +103,6 @@
               "ViewState": "AQIAAC0AAAAAAAAAAAA7wDEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-27T01:07:04.625Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Startup.cs",
-              "RelativeDocumentMoniker": "AlunoApi\\Startup.cs",
-              "ToolTip": "C:\\Users\\vinic\\Desktop\\AlunocomApi\\AlunoApi\\AlunoApi\\Startup.cs*",
-              "RelativeToolTip": "AlunoApi\\Startup.cs*",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwDEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:16:01.859Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
