@@ -24,7 +24,7 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="aluno-container">
       <br/>
       <h3>Cadastro de Alunos</h3>
     <header>
