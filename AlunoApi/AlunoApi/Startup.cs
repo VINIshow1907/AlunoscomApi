@@ -2,6 +2,7 @@ using AlunoApi.Context;
 using AlunoApi.Services;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 
 
@@ -24,6 +25,10 @@ namespace AlunoApi
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddScoped<IAlunoService, AlunosService>();
 
