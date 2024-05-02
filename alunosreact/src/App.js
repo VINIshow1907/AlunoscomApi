@@ -10,8 +10,11 @@ function App() {
   const baseUrl ="https://localhost:7226/api/alunos";
   
   const [data,setData]=useState([]);
+  const [updateData,setUpdateData] = useState(true);
   const [modalIncluir,setModalIncluir]=useState(false);
   const [modalEditar,setModalEditar]=useState(false);
+  const [modalExcluir, setModalExcluir]=useState(false);
+
 
   const [alunoSelecionado, setAlunoSelecionado]=useState({
     id: '',
@@ -22,8 +25,8 @@ function App() {
 
   const selecionarAluno = (aluno, opcao) => {
     setAlunoSelecionado(aluno);
-    (opcao === "Editar") &&
-    abrirFecharModalEditar()
+    (opcao === "Editar") ?
+    abrirFecharModalEditar() : abrirFecharModalExcluir();
   }
 
   const abrirFecharModalIncluir=()=>{
@@ -32,6 +35,10 @@ function App() {
 
   const abrirFecharModalEditar=()=>{
     setModalEditar(!modalEditar);
+  }
+
+  const abrirFecharModalExcluir=()=>{
+    setModalExcluir(!modalExcluir);
   }
 
   const handleChange = e=>{
@@ -51,12 +58,13 @@ function App() {
     })
   }
 
-  const pedidoPost=async()=>{
+  const pedidoPost = async()=>{
     delete alunoSelecionado.id;
     alunoSelecionado.idade=parseInt(alunoSelecionado.idade);
       await axios.post(baseUrl, alunoSelecionado)
       .then(response=>{
         setData(data.concat(response.data));
+        setUpdateData(true);
         abrirFecharModalIncluir();
       }).catch(error=>{
         console.log(error);
@@ -76,15 +84,30 @@ function App() {
           aluno.idade=resposta.idade;
         }
       });
+      setUpdateData(true);
       abrirFecharModalEditar();
     }).catch(error=>{
       console.log(error);
     })
   }
 
+  const pedidoDelete = async () => {
+    await axios.delete(baseUrl + "/" + alunoSelecionado.id)
+    .then(response => {
+      setData(data.filter(aluno => aluno.id !== response.data));
+      setUpdateData(true);
+      abrirFecharModalExcluir();
+    }) .catch(error => {
+      console.log(error);
+    })
+  }
+
   useEffect(()=>{
+    if (updateData) {
     pedidoGet();
-  })
+    setUpdateData(false);
+    }
+  }, [updateData])
 
   return (
     <div className="aluno-container">
@@ -113,7 +136,7 @@ function App() {
               <td>{aluno.idade}</td>
               <td>
                 <button className='btn btn-primary' onClick={()=>selecionarAluno(aluno, "Editar")}>Editar</button>{""}
-                <button className='btn btn-danger' onClick={()=>selecionarAluno(aluno, "Editar")}>Excluir</button>
+                <button className='btn btn-danger' onClick={()=>selecionarAluno(aluno, "Excluir")}>Excluir</button>
               </td>
             </tr>
           ))}
@@ -174,6 +197,16 @@ function App() {
       <button className="btn btn-primary" onClick={()=> pedidoPut()}>Editar</button> {"  "}
       <button className="btn btn-danger"onClick={()=>abrirFecharModalEditar()}>Cancelar</button>
     </ModalFooter>
+    </Modal>
+
+    <Modal isOpen={modalExcluir}>
+      <ModalBody>
+        Confirma a exclusão deste(a) aluno (a) : {alunoSelecionado && alunoSelecionado.nome} ?
+      </ModalBody>
+      <ModalFooter>
+        <button className="btn btn-danger" onClick={()=>pedidoDelete()} > Sim </button>
+        <button className="btn btn-secondary" onClick={()=> abrirFecharModalExcluir()}> Não </button>
+      </ModalFooter>
     </Modal>
 
     </div>
