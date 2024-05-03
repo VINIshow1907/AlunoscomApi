@@ -3,6 +3,9 @@ using AlunoApi.Services;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
 
 
 
@@ -30,7 +33,26 @@ namespace AlunoApi
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(OptionsBuilderConfigurationExtensions =>
+             {
+                 OptionsBuilderConfigurationExtensions.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidateAudience = true,
+                     ValidateLifetime = true,
+                     ValidateIssuerSigningKey = true,
+                     ValidIssuer = Configuration["Jwt:Issuer"],
+                     ValidAudience = Configuration["Jwt:Audience"],
+                     IssuerSigningKey = new SymmetricSecurityKey(
+                         Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                 };
+             });
+
+            services.AddScoped<IAuthenticate,AuthenticateService>();
+
             services.AddScoped<IAlunoService, AlunosService>();
+            services.AddCors();
 
             services.AddSwaggerGen(c =>
             {
