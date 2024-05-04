@@ -1,5 +1,7 @@
 ﻿using AlunoApi.Models;
 using AlunoApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,7 +11,8 @@ namespace AlunoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [Produces("application/json")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class AlunosController : ControllerBase
     {
         private IAlunoService _alunoService;
@@ -20,8 +23,8 @@ namespace AlunoApi.Controllers
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+       // [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
         public async Task<ActionResult<IAsyncEnumerable<Aluno>>> GetAlunos()
         {
