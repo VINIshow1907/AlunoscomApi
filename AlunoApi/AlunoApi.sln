@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlunoApi", "AlunoApi\AlunoApi.csproj", "{AF9559F5-B633-49A2-A0DA-328AC136EA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlunoApi", "AlunoApi\AlunoApi.csproj", "{AF9559F5-B633-49A2-A0DA-328AC136EA55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlunoTeste", "AlunoTeste\AlunoTeste.csproj", "{16B1C3AC-B4C7-482B-B61B-F4E8BDA33A99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AF9559F5-B633-49A2-A0DA-328AC136EA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF9559F5-B633-49A2-A0DA-328AC136EA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF9559F5-B633-49A2-A0DA-328AC136EA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B1C3AC-B4C7-482B-B61B-F4E8BDA33A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B1C3AC-B4C7-482B-B61B-F4E8BDA33A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B1C3AC-B4C7-482B-B61B-F4E8BDA33A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B1C3AC-B4C7-482B-B61B-F4E8BDA33A99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
